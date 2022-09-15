@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  postgresql:
+    image: postgres
+    container_name: "postgres"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwerty
+      - POSTGRES_DB=pars
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+
+volumes:
+  postgresql:
+    driver: local
